@@ -7,6 +7,7 @@ var level = 0;
 $(".btn-start").click(function() {
   $(".btn-start h2").text("Start");
   $(".btn-start").removeClass("restart");
+  clearGame();
   $(".btn-start").addClass("pressed");
   setTimeout(function() {
     $(".btn-start").removeClass("pressed");
@@ -17,7 +18,10 @@ $(".btn-start").click(function() {
   $("h1").text("Level " + level);
 })
 
+
 function nextSequence() {
+  $(".btn-start h2").text("Restart");
+  $(".btn-start").addClass("restart");
   level++;
   userClickedPattern = [];
   $("h1").text("Level " + level);
@@ -62,8 +66,6 @@ function checkAnswer(currentLevel) {
       $("body").removeClass("game-over");
     }, 200);
     $("h1").text("Game Over,Press Restart ");
-    $(".btn-start h2").text("Restart");
-    $(".btn-start").addClass("restart");
     clearGame();
   }
 
