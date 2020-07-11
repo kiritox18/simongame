@@ -10,6 +10,12 @@ $(document).keydown(function() {
   $("h1").text("Level " + level);
 })
 
+$(".btn").click(function() {
+  if(count==0)
+     nextSequence();
+  count++;
+})
+
 function nextSequence() {
   level++;
   userClickedPattern = [];
