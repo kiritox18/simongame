@@ -48,6 +48,8 @@ function checkAnswer(currentLevel) {
     if (currentLevel === gamePattern.length - 1)
       setTimeout(nextSequence, 1000);
   } else {
+    var audio = new Audio("sounds/wrong.mp3");
+    audio.play();
     $("body").addClass("game-over");
     setTimeout(function() {
       $("body").removeClass("game-over");
